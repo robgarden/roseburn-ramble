@@ -4,6 +4,9 @@ import mapboxgl, { Map } from "mapbox-gl";
 import styled from "styled-components";
 import { MAPBOX_ACCESS_TOKEN } from "../config";
 
+// eslint-disable-next-line import/no-webpack-loader-syntax
+(mapboxgl as any).workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+
 const MapContainer = styled.div`
   height: 400px;
 `;
