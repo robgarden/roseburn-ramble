@@ -1,14 +1,15 @@
-import "./App.css";
-import { Clue } from "./Clue";
+import { Route, Routes } from "react-router-dom";
+import { Landing } from "./pages/Landing";
+import { StepRoutes } from "./routes";
 
 function App() {
   return (
-    <div className="App">
-      <Clue
-        clueText="Spot a sign with a house and now take heed, The name of the builder is the answer ye need!"
-        walkingDirections="Leaving Roseburn Primary School walk along the left-hand side of Roseburn Street towards Roseburn."
-      />
-    </div>
+    <Routes>
+      {StepRoutes.map(({ path, element }) => {
+        return <Route key={path} path={path} element={element} />;
+      })}
+      <Route path="/" element={<Landing />} />
+    </Routes>
   );
 }
 
