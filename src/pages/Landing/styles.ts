@@ -24,13 +24,15 @@ export const RoseburnTitle = styled.h1`
 
 export const StartButton = styled(Link)`
   display: block;
-  background: #eee;
+  background: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.secondary};
   text-align: center;
   appearance: none;
+  text-decoration: none;
   padding: 10px 20px;
   border-radius: 4px;
   font-size: 20px;
-  width: 100%;
+  width: 90%;
   margin-top: 20px;
 `
 

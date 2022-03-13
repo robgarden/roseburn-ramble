@@ -18,7 +18,7 @@ export function MapWidget() {
 
   return (
     <>
-      <MapButton onClick={() => setIsOpen((open) => !open)}>View map</MapButton>
+      <MapButton onClick={() => setIsOpen((open) => !open)}>View clues map</MapButton>
       {isOpen && <Map />}
     </>
   );
