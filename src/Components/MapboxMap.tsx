@@ -34,8 +34,6 @@ export function MapboxMap() {
     if (!map.current) return; // wait for map to initialize
     map.current.on("move", () => {
       if (map.current) {
-        console.log(Number(map.current.getCenter().lng.toFixed(4)));
-        console.log(Number(map.current.getCenter().lat.toFixed(4)));
         setLng(Number(map.current.getCenter().lng.toFixed(4)));
         setLat(Number(map.current.getCenter().lat.toFixed(4)));
         setZoom(Number(map.current.getZoom().toFixed(2)));
