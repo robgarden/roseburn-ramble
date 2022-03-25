@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import FontStyles from "./fontStyles";
 import GlobalStyle from "./global-style";
+
+import "./index.css";
+import "normalize.css/normalize.css"
 
 ReactDOM.render(
   <React.StrictMode>

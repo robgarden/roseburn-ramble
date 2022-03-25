@@ -1,17 +1,14 @@
-import styled from "styled-components";
 import { MapboxMap } from "../Components/MapboxMap";
-
 import { MapWidget } from "../Components/MapWidget";
 import { Step } from "../interfaces/Step";
+import { Button } from "../styles";
 import {
   Container,
   MagnifyingGlass,
   MainContainer,
   Paragraph,
-  StartButton,
   TopSecret,
-} from "./Landing/styles";
-// import { steps } from "../constants/steps";
+} from "../styles";
 
 interface StepProps {
   step: Step;
@@ -34,7 +31,7 @@ export function StepPage({ step, mapboxMap }: StepProps) {
           <Paragraph key={`${step.id}-clue-${i}`}>{clue}</Paragraph>
         ))}
         {/* <Map /> */}
-        <StartButton to={step.id}>Answer Clue</StartButton>
+        <Button to={step.id}>Answer Clue</Button>
       </Container>
     </MainContainer>
   );

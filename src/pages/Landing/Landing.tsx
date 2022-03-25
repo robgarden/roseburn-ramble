@@ -1,13 +1,13 @@
 import {
   Container,
-  StartButton,
   TopSecret,
   Paragraph,
   MagnifyingGlass,
   MainContainer,
   PostageStamp,
-} from "./styles";
+} from "../../styles";
 import { steps } from "../../constants/steps";
+import { Button } from "../../styles";
 
 export function Landing() {
   return (
@@ -33,7 +33,7 @@ export function Landing() {
           left with the thief and the crime scene.
         </Paragraph>
         {/* <Map /> */}
-        <StartButton to={steps[0].id}>Get started</StartButton>
+        <Button to={steps[0].id}>Get started</Button>
       </Container>
     </MainContainer>
   );
