@@ -1,6 +1,11 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import { Link } from "react-router-dom";
+
+const fadeIn = keyframes`
+ 0% {opacity: 0}
+ 100% {opacity: 1}
+`
 
 export const MainContainer = styled.div`
   display: flex;
@@ -10,7 +15,6 @@ export const MainContainer = styled.div`
   background-image: url("/images/frame.png");
   background-repeat: no-repeat, repeat;
   background-size: 100% 100%;
-  // padding: 20px;
 `;
 
 export const Container = styled.div`
@@ -21,9 +25,29 @@ export const Container = styled.div`
   padding: 50px;
   min-height: 100%;
   text-align: center;
+  animation-name: ${fadeIn};
+  animation-duration: 2s;
 `;
 
-export const Button = styled(Link)`
+export const StyledLink = styled(Link)`
+  display: block;
+  background: ${(props) => props.theme.darkBlue};
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  appearance: none;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 20px;
+  width: 90%;
+  margin-top: 30px;
+  z-index: 2;
+`
+
+export const Button = styled.button`
+  appearance: none;
+  border: none;
   display: block;
   background: ${(props) => props.theme.darkBlue};
   color: white;

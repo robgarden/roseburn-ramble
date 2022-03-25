@@ -5,9 +5,9 @@ import {
   MagnifyingGlass,
   MainContainer,
   PostageStamp,
+  StyledLink,
 } from "../../styles";
 import { steps } from "../../constants/steps";
-import { Button } from "../../styles";
 
 export function Landing() {
   return (
@@ -33,7 +33,7 @@ export function Landing() {
           left with the thief and the crime scene.
         </Paragraph>
         {/* <Map /> */}
-        <Button to={steps[0].id}>Get started</Button>
+        <StyledLink to={steps[0].id}>Get started</StyledLink>
       </Container>
     </MainContainer>
   );
