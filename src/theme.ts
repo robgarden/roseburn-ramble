@@ -1,3 +1,5 @@
+import { colors } from "./constants/colors";
+
 export interface Theme {
   primary: string,
   secondary: string
@@ -5,5 +7,6 @@ export interface Theme {
 
 export const theme: Theme = {
   primary: '#63210B',
-  secondary: '#F1D4E5'
+  secondary: '#F1D4E5',
+  ...colors
 };
