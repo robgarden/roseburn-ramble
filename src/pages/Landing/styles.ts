@@ -20,6 +20,7 @@ export const Container = styled.div`
   align-items: center;
   padding: 50px;
   min-height: 100%;
+  text-align: center;
 `;
 
 export const RoseburnArtwork = styled.img.attrs({

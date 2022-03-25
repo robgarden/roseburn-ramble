@@ -2,13 +2,11 @@ import {
   Container,
   StartButton,
   TopSecret,
-  RoseburnArtwork,
   Paragraph,
   MagnifyingGlass,
   MainContainer,
   PostageStamp,
 } from "./styles";
-// import { Map } from "../../Components/Map";
 import { steps } from "../../constants/steps";
 
 export function Landing() {
@@ -17,9 +15,8 @@ export function Landing() {
       <Container>
         <TopSecret />
         <MagnifyingGlass />
-        {/* <RoseburnArtwork /> */}
         <PostageStamp />
-        <Paragraph>
+        <Paragraph style={{ marginTop: "30px" }}>
           <strong>
             Roseburn Primary School needs YOU to help raise funds for their
             PLAYGROUND.
