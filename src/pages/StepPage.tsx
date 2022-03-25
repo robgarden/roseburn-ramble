@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Answers } from "../Components/Answers/Answers";
 import { MapboxMap } from "../Components/MapboxMap";
 import { MapWidget } from "../Components/MapWidget";
-import { Modal } from "../Components/Modal/Modal";
 import { SlideOver } from "../Components/SlideOver/SliderOver";
 import { Step } from "../interfaces/Step";
 import { Button } from "../styles";
@@ -38,11 +38,8 @@ export function StepPage({ step, mapboxMap }: StepProps) {
         {/* <Map /> */}
         <Button onClick={() => setShowAnswers(true)}>Answer Clue</Button>
       </Container>
-      {/* <Modal open={true} onClose={() => {}}>
-        <p>Hello</p>
-      </Modal> */}
       <SlideOver open={showAnswers} onClose={() => setShowAnswers(false)}>
-        <p>Hello</p>
+        <Answers />
       </SlideOver>
     </MainContainer>
   );

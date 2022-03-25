@@ -13,7 +13,7 @@ export const MainContainer = styled.div`
   min-height: 100vh;
   overflow-x: hidden;
   background-image: url("/images/frame.png");
-  background-repeat: no-repeat, repeat;
+  background-repeat: no-repeat, no-repeat;
   background-size: 100% 100%;
 `;
 
@@ -40,7 +40,7 @@ export const StyledLink = styled(Link)`
   padding: 10px 20px;
   border-radius: 4px;
   font-size: 20px;
-  width: 90%;
+  width: 100%;
   margin-top: 30px;
   z-index: 2;
 `
@@ -58,7 +58,7 @@ export const Button = styled.button`
   padding: 10px 20px;
   border-radius: 4px;
   font-size: 20px;
-  width: 90%;
+  width: 100%;
   margin-top: 30px;
   z-index: 2;
 `;
@@ -97,3 +97,11 @@ export const TopSecret = styled.img.attrs({
   width: 150px;
   opacity: 0.2;
 `;
+
+
+export const Mugshot = styled.img.attrs({
+  src: "/images/mugshot.png",
+  alt: "mugshot"
+})`
+  width: 100%;
+`
