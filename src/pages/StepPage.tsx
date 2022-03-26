@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Answers } from "../Components/Answers/Answers";
 import { MapboxMap } from "../Components/MapboxMap";
-import { MapWidget } from "../Components/MapWidget";
 import { SlideOver } from "../Components/SlideOver/SliderOver";
 import { steps } from "../constants/steps";
 import { Step } from "../interfaces/Step";
@@ -39,8 +38,10 @@ export function StepPage({ step, mapboxMap }: StepProps) {
         {clues.map((clue, i) => (
           <Paragraph key={`${step.id}-clue-${i}`}>{clue}</Paragraph>
         ))}
-        {/* <Map /> */}
         <Button onClick={() => setShowAnswers(true)}>Answer Clue</Button>
+        <div style={{ marginTop: "50px", width: "100%" }}>
+          <MapboxMap />
+        </div>
       </Container>
       <SlideOver open={showAnswers} onClose={() => setShowAnswers(false)}>
         <Answers step={step} onAnswer={() => setShowAnswers(false)} />
