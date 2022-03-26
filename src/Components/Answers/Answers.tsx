@@ -21,7 +21,9 @@ export const Answers = (props: AnswersProps) => {
     if (nextStepIndex < steps.length) {
       const nextStep = steps[nextStepIndex] as Step;
       navigate(`/${nextStep.id}`);
-      onAnswer()
+      onAnswer();
+    } else if (nextStepIndex === steps.length) {
+      navigate(`/finish`);
     }
   }
 
