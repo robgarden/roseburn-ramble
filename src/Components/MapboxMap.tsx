@@ -23,12 +23,12 @@ export function MapboxMap() {
 
   const markCurrentLocation = useCallback((lngLat: LngLat) => {
     if (map.current) {
+      map.current.setCenter(lngLat)
       if (!marker.current) {
         (marker.current as any) = new mapboxgl.Marker()
           .setLngLat(lngLat)
           .addTo(map.current);
       } else {
-        marker.current.remove();
         marker.current.setLngLat(lngLat);
       }
     }
@@ -47,6 +47,7 @@ export function MapboxMap() {
     });
 
     const locator = new GeoLocator(markCurrentLocation);
+    locator.init()
     return () => {
       locator.cleanup();
     };

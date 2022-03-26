@@ -19,7 +19,7 @@ class GeoLocator {
       (position) => {
         this.ready = true;
         this.callCallback(position);
-        this.watchId = navigator.geolocation.watchPosition(this.callCallback);
+        this.watchId = navigator.geolocation.watchPosition(this.callCallback.bind(this));
       },
       (_error) => {
         this.ready = false;
