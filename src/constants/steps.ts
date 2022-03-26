@@ -10,6 +10,7 @@ export const steps: Step[] = [
       "A black and white photo is connected to which queen?",
     ],
     answer: "Answer: Elizabeth (a suspect Elizabeth Smith – a doctor)",
+    shortAnswer: "elizabeth",
   },
   {
     id: "a2399132-dfd0-4394-98df-15369dba7e01",
@@ -19,6 +20,7 @@ export const steps: Step[] = [
       "Write down letters seven, twelve and seventeen",
     ],
     answer: "Answer: FIN (a suspect Benjy Fin - a fisherman)",
+    shortAnswer: "fin",
   },
   {
     id: "9e8a0176-ea2b-4a0b-bdac-f7e76ac1c1aa",
@@ -29,6 +31,7 @@ export const steps: Step[] = [
       "Look at the sign - What colour do you see?",
     ],
     answer: "Answer: Blue (a place Blue Flower Wood)",
+    shortAnswer: "blue",
   },
   {
     id: "91273b1c-3fbe-42bd-9f0c-fbe73818edde",
@@ -39,6 +42,7 @@ export const steps: Step[] = [
       "No jewels here – not a trace!",
     ],
     answer: "Answer: Elvanbank (a place Elvanbank School)",
+    shortAnswer: "elvanbank",
   },
   {
     id: "ebe3a699-b404-42f3-b02f-6e869b0b9253",
@@ -49,6 +53,7 @@ export const steps: Step[] = [
       "What is that bird coming out of the fire?",
     ],
     answer: "Answer: Phoenix (a suspect Phoenix Notes – a musician)",
+    shortAnswer: "phoenix",
   },
   {
     id: "8dfec32d-c4da-4d04-96ff-8605f4a28de3",
@@ -59,6 +64,7 @@ export const steps: Step[] = [
       "Can you find a word attached to this seat?",
     ],
     answer: "Answer: Logic (a place Logic Mobile Phone Shop)",
+    shortAnswer: "logic",
   },
   {
     id: "238885e8-4898-4aea-b91c-73f595ea23d5",
@@ -69,6 +75,7 @@ export const steps: Step[] = [
       "But can you spot a little feathered friend?",
     ],
     answer: "Answer: Green Parrot (a place Green Parrot Café)",
+    shortAnswer: "green-parrot",
   },
   {
     id: "ca005314-2a6c-4b6a-ace4-fedac983634f",
@@ -79,6 +86,7 @@ export const steps: Step[] = [
       "There used to be two, where’s the other one?",
     ],
     answer: "Answer: Museum (a place Museum)",
+    shortAnswer: "museum",
   },
   {
     id: "25638924-b864-4b12-9946-d1ca5073abac",
@@ -89,6 +97,7 @@ export const steps: Step[] = [
       "Read where it was made before going astray?",
     ],
     answer: "Answer: Lion (a place Lion statue)",
+    shortAnswer: "lion",
   },
   {
     id: "3ec3b790-fe27-4489-b1d9-327a69d71f86",
@@ -99,6 +108,7 @@ export const steps: Step[] = [
       "Who sculpted the statue of Sri Chinmoy?",
     ],
     answer: "Answer: Torpy (a suspect Tom Torpy - a newspaper delivery boy)",
+    shortAnswer: "torpy",
   },
   {
     id: "594e425a-df8c-4128-824b-ed351412af00",
@@ -109,6 +119,7 @@ export const steps: Step[] = [
       "Another place where no jewels are in sight.",
     ],
     answer: "Answer: Muir (a place Muir Library)",
+    shortAnswer: "muir",
   },
   {
     id: "d3204100-ab02-4359-9bca-ad6c162beb3d",
@@ -119,6 +130,7 @@ export const steps: Step[] = [
       "Now pay attention to the name of this street.",
     ],
     answer: "Answer: Baird (a suspect Alfred Baird - a florist)",
+    shortAnswer: "baird",
   },
   {
     id: "b78d1941-da81-4fb3-9c46-f2b92c392718",
@@ -128,6 +140,7 @@ export const steps: Step[] = [
       "Its on the front of something metal and red.",
     ],
     answer: "Answer: Crown (a place The Crown pub)",
+    shortAnswer: "crown",
   },
   {
     id: "dd61371d-a352-40b6-8cee-e90767cd52a4",
@@ -138,5 +151,6 @@ export const steps: Step[] = [
       "The last clue is a bird often seen here.",
     ],
     answer: "Answer: Swan (a person Ella Swan - a ballet teacher)",
+    shortAnswer: "swan",
   },
 ];

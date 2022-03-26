@@ -5,4 +5,5 @@ export interface Step {
   clues: string[];
   directions: string;
   answer: string;
+  shortAnswer: string;
 }
