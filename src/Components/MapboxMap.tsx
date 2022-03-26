@@ -6,8 +6,9 @@ import styled from "styled-components";
 import { MAPBOX_ACCESS_TOKEN } from "../config";
 import GeoLocator from "../Geolocator";
 
-// eslint-disable-next-line import/no-webpack-loader-syntax
-(mapboxgl as any).workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
+(mapboxgl as any).workerClass =
+  // eslint-disable-next-line import/no-webpack-loader-syntax
+  require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 const MapContainer = styled.div`
   height: 200px;
@@ -21,33 +22,37 @@ export function MapboxMap() {
   const [zoom, setZoom] = useState(16);
   const marker = useRef<Marker>();
 
+  function plotMarkerAndCenter(map: Map, lngLat: LngLat) {
+    map.setCenter(lngLat);
+    if (!marker.current) {
+      marker.current = new mapboxgl.Marker().setLngLat(lngLat).addTo(map);
+    } else {
+      marker.current.setLngLat(lngLat);
+    }
+  }
+
   const markCurrentLocation = useCallback((lngLat: LngLat) => {
-    if (map.current) {
-      map.current.setCenter(lngLat)
-      if (!marker.current) {
-        (marker.current as any) = new mapboxgl.Marker()
-          .setLngLat(lngLat)
-          .addTo(map.current);
-      } else {
-        marker.current.setLngLat(lngLat);
+    if (!map.current) {
+      if (!!mapContainer.current) {
+        map.current = new mapboxgl.Map({
+          accessToken: MAPBOX_ACCESS_TOKEN,
+          container: mapContainer.current,
+          // style: "mapbox://styles/jackalberry/cl0pmxfi300dc14ldgo5f2g4f",
+          style: "mapbox://styles/mapbox/streets-v11",
+          center: [lng, lat],
+          zoom: zoom,
+          attributionControl: true,
+        });
+        plotMarkerAndCenter(map.current, lngLat);
       }
+    } else {
+      plotMarkerAndCenter(map.current, lngLat);
     }
   }, []);
 
   useEffect(() => {
-    if (map.current || !mapContainer.current) return; // initialize map only once
-    map.current = new mapboxgl.Map({
-      accessToken: MAPBOX_ACCESS_TOKEN,
-      container: mapContainer.current,
-      // style: "mapbox://styles/jackalberry/cl0pmxfi300dc14ldgo5f2g4f",
-      style: "mapbox://styles/mapbox/streets-v11",
-      center: [lng, lat],
-      zoom: zoom,
-      attributionControl: true,
-    });
-
     const locator = new GeoLocator(markCurrentLocation);
-    locator.init()
+    locator.init();
     return () => {
       locator.cleanup();
     };
