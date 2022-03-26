@@ -95,7 +95,7 @@ export const steps: Step[] = [
     directions:
       "Walk past the bandstand and take the next left towards the statue.",
     clues: [
-      "Another name to be found of an innocent boy",
+      "Now hunt for the name of an innocent boy",
       "Who sculpted the statue of Sri Chinmoy?",
     ],
     answer: "Answer: Torpy (a suspect Tom Torpy - a newspaper delivery boy)",
@@ -103,7 +103,7 @@ export const steps: Step[] = [
   {
     id: "594e425a-df8c-4128-824b-ed351412af00",
     directions:
-      "Turn left and then right to exit the walled garden. Follow the path to the left in the direction of Balgreen / Quiet Route. Go through the car park and leave the park before crossing at the pedestrian crossing.",
+      "Facing the statue, turn left and then next right to exit the walled garden. Follow the path to the left in the direction of Balgreen / Quiet Route. Go through the car park and cross Balgreen Road at the pedestrian crossing.",
     clues: [
       "Look out for an arrow in purple and white",
       "Another place where no jewels are in sight.",
@@ -113,7 +113,7 @@ export const steps: Step[] = [
   {
     id: "d3204100-ab02-4359-9bca-ad6c162beb3d",
     directions:
-      "Follow the path along the river towards Roseburn. Go through the tunnel and turn left though the green floodgates. Take the first road on your right.",
+      "Follow the path along the river towards Roseburn. Go past the community garden and through the tunnel before turning left though the green floodgates. Take the first road on your right.",
     clues: [
       "You’ve come a long way - well done those feet!",
       "Now pay attention to the name of this street.",
