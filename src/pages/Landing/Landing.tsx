@@ -33,6 +33,7 @@ export function Landing() {
           Your job will be to eliminate suspects and locations until you are
           left with the thief and the crime scene.
         </Paragraph>
+        {/* <Map /> */}
         <StyledLink to={steps[0].id}>Get started</StyledLink>
         <NotesText>
           <em>
