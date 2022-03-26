@@ -1,10 +1,12 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import distance from "@turf/distance";
 import mapboxgl, { LngLat, Map, Marker } from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import styled from "styled-components";
 import { MAPBOX_ACCESS_TOKEN } from "../config";
 import GeoLocator from "../Geolocator";
+import { Paragraph } from "../styles";
 
 (mapboxgl as any).workerClass =
   // eslint-disable-next-line import/no-webpack-loader-syntax
@@ -21,8 +23,18 @@ export function MapboxMap() {
   const [lat, setLat] = useState(55.9434);
   const [zoom, setZoom] = useState(16);
   const marker = useRef<Marker>();
+  const [currentLocation, setCurrentLocation] = useState<LngLat | undefined>();
+
+  const distanceFromClue = useMemo(() => {
+    if (currentLocation) {
+      return distance([currentLocation.lng, currentLocation.lat], [lng, lat], {
+        units: "miles",
+      });
+    }
+  }, [currentLocation]);
 
   function plotMarkerAndCenter(map: Map, lngLat: LngLat) {
+    setCurrentLocation(lngLat);
     map.setCenter(lngLat);
     if (!marker.current) {
       marker.current = new mapboxgl.Marker().setLngLat(lngLat).addTo(map);
@@ -71,6 +83,11 @@ export function MapboxMap() {
 
   return (
     <div style={{ width: "100%" }}>
+      {typeof distanceFromClue !== "undefined" && (
+        <Paragraph>
+          Est. Distance from clue {distanceFromClue.toFixed(5)} miles
+        </Paragraph>
+      )}
       <MapContainer ref={mapContainer} className="map-container" />
     </div>
   );
