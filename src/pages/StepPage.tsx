@@ -3,8 +3,9 @@ import { Answers } from "../Components/Answers/Answers";
 import { MapboxMap } from "../Components/MapboxMap";
 import { MapWidget } from "../Components/MapWidget";
 import { SlideOver } from "../Components/SlideOver/SliderOver";
+import { steps } from "../constants/steps";
 import { Step } from "../interfaces/Step";
-import { Button } from "../styles";
+import { Button, Heading } from "../styles";
 import {
   Container,
   MagnifyingGlass,
@@ -21,7 +22,7 @@ interface StepProps {
 export function StepPage({ step, mapboxMap }: StepProps) {
   const { clues, directions } = step;
 
-  const [showAnswers, setShowAnswers] = useState(false)
+  const [showAnswers, setShowAnswers] = useState(false);
   // const stepIndex = steps.findIndex((_) => _.id === step.id);
   // const progress = (stepIndex + 1) / steps.length;
   return (
@@ -29,6 +30,9 @@ export function StepPage({ step, mapboxMap }: StepProps) {
       <Container>
         <TopSecret />
         <MagnifyingGlass />
+        <Heading style={{ marginTop: "30px" }}>
+          Step {steps.findIndex((_) => _.id === step.id) + 1}
+        </Heading>
         <Paragraph style={{ marginTop: "30px" }}>
           <strong>{directions}</strong>
         </Paragraph>
@@ -39,7 +43,7 @@ export function StepPage({ step, mapboxMap }: StepProps) {
         <Button onClick={() => setShowAnswers(true)}>Answer Clue</Button>
       </Container>
       <SlideOver open={showAnswers} onClose={() => setShowAnswers(false)}>
-        <Answers />
+        <Answers step={step} onAnswer={() => setShowAnswers(false)} />
       </SlideOver>
     </MainContainer>
   );

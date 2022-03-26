@@ -6,8 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import FontStyles from "./fontStyles";
 import GlobalStyle from "./global-style";
 
-import "./index.css";
 import "normalize.css/normalize.css"
+import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>

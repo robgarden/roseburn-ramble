@@ -37,7 +37,7 @@ export const StyledLink = styled(Link)`
   text-align: center;
   appearance: none;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 10px;
   border-radius: 4px;
   font-size: 20px;
   width: 100%;
@@ -55,7 +55,7 @@ export const Button = styled.button`
   text-align: center;
   appearance: none;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 10px;
   border-radius: 4px;
   font-size: 20px;
   width: 100%;
@@ -67,6 +67,10 @@ export const Paragraph = styled.p`
   font-family: "Elegant Typewriter", sans-serif;
   line-height: 150%;
 `;
+
+export const Heading = styled.h1`
+  font-size: 24px;
+`
 
 export const MagnifyingGlass = styled.img.attrs({
   src: "/images/magnifying-glass.png",
