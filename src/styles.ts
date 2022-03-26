@@ -70,7 +70,6 @@ export const Paragraph = styled.p`
 
 export const Heading = styled.h1`
   font-size: 24px;
-  color: #444;
 `
 
 export const MagnifyingGlass = styled.img.attrs({
