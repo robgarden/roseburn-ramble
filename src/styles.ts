@@ -66,6 +66,7 @@ export const Button = styled.button`
 export const Paragraph = styled.p`
   font-family: "Elegant Typewriter", sans-serif;
   line-height: 150%;
+  color: #444;
 `;
 
 export const Heading = styled.h1`
