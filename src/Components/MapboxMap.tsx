@@ -55,6 +55,13 @@ export function MapboxMap() {
           zoom: zoom,
           attributionControl: true,
         });
+        map.current.on("move", () => {
+          if (map.current) {
+            setLng(Number(map.current.getCenter().lng.toFixed(4)));
+            setLat(Number(map.current.getCenter().lat.toFixed(4)));
+            setZoom(Number(map.current.getZoom().toFixed(2)));
+          }
+        });
         plotMarkerAndCenter(map.current, lngLat);
       }
     } else {
@@ -69,17 +76,6 @@ export function MapboxMap() {
       locator.cleanup();
     };
   }, []);
-
-  useEffect(() => {
-    if (!map.current) return; // wait for map to initialize
-    map.current.on("move", () => {
-      if (map.current) {
-        setLng(Number(map.current.getCenter().lng.toFixed(4)));
-        setLat(Number(map.current.getCenter().lat.toFixed(4)));
-        setZoom(Number(map.current.getZoom().toFixed(2)));
-      }
-    });
-  }, [map.current]);
 
   return (
     <div style={{ width: "100%" }}>
