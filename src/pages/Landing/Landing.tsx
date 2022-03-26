@@ -8,6 +8,7 @@ import {
   StyledLink,
 } from "../../styles";
 import { steps } from "../../constants/steps";
+import { NotesText } from "./styles";
 
 export function Landing() {
   return (
@@ -34,6 +35,13 @@ export function Landing() {
         </Paragraph>
         {/* <Map /> */}
         <StyledLink to={steps[0].id}>Get started</StyledLink>
+        <NotesText>
+          <em>
+            * This website may ask for permission for your location to plot your
+            treasure hunt as you walk. You can deny if you do not want this
+            feature.
+          </em>
+        </NotesText>
       </Container>
     </MainContainer>
   );

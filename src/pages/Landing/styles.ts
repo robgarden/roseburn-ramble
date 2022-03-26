@@ -8,3 +8,10 @@ export const RoseburnArtwork = styled.img.attrs({
   margin-top: 20px;
   width: 100%;
 `;
+
+export const NotesText = styled.p`
+  font-size: 10px;
+  color: #999;
+  margin-top: 20px;
+  font-family: sans-serif;
+`;
