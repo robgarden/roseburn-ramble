@@ -7,6 +7,8 @@ import styled from "styled-components";
 import { MAPBOX_ACCESS_TOKEN } from "../config";
 import GeoLocator from "../Geolocator";
 import { Paragraph } from "../styles";
+import { steps } from "../constants/steps";
+import { Step } from "../interfaces/Step";
 
 (mapboxgl as any).workerClass =
   // eslint-disable-next-line import/no-webpack-loader-syntax
@@ -16,22 +18,24 @@ const MapContainer = styled.div`
   height: 200px;
 `;
 
-export function MapboxMap() {
+interface MapboxMapProps {
+  step: Step;
+}
+
+export function MapboxMap({ step }: MapboxMapProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<Map | null>(null);
-  const [lng, setLng] = useState(-3.2368);
-  const [lat, setLat] = useState(55.9434);
-  const [zoom, setZoom] = useState(16);
   const marker = useRef<Marker>();
   const [currentLocation, setCurrentLocation] = useState<LngLat | undefined>();
 
   const distanceFromClue = useMemo(() => {
-    if (currentLocation) {
+    if (currentLocation && step.coords) {
+      const { lng, lat } = step.coords;
       return distance([currentLocation.lng, currentLocation.lat], [lng, lat], {
         units: "miles",
       });
     }
-  }, [currentLocation]);
+  }, [currentLocation, step]);
 
   function plotMarkerAndCenter(map: Map, lngLat: LngLat) {
     setCurrentLocation(lngLat);
@@ -51,16 +55,9 @@ export function MapboxMap() {
           container: mapContainer.current,
           // style: "mapbox://styles/jackalberry/cl0pmxfi300dc14ldgo5f2g4f",
           style: "mapbox://styles/mapbox/streets-v11",
-          center: [lng, lat],
-          zoom: zoom,
+          center: lngLat,
+          zoom: 16,
           attributionControl: true,
-        });
-        map.current.on("move", () => {
-          if (map.current) {
-            setLng(Number(map.current.getCenter().lng.toFixed(4)));
-            setLat(Number(map.current.getCenter().lat.toFixed(4)));
-            setZoom(Number(map.current.getZoom().toFixed(2)));
-          }
         });
         plotMarkerAndCenter(map.current, lngLat);
       }

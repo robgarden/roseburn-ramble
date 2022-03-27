@@ -1,3 +1,4 @@
+import { LngLat } from "mapbox-gl";
 import { UUID } from "./UUID";
 
 export interface Step {
@@ -6,4 +7,5 @@ export interface Step {
   directions: string;
   answer: string;
   shortAnswer: string;
+  coords?: LngLat
 }

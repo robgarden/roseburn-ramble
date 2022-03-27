@@ -40,7 +40,7 @@ export function StepPage({ step, mapboxMap }: StepProps) {
         ))}
         <Button onClick={() => setShowAnswers(true)}>Answer Clue</Button>
         <div style={{ marginTop: "50px", width: "100%" }}>
-          <MapboxMap />
+          <MapboxMap step={step} />
         </div>
       </Container>
       <SlideOver open={showAnswers} onClose={() => setShowAnswers(false)}>
