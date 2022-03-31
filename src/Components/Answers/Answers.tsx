@@ -2,8 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import { steps } from "../../constants/steps";
 import { Step } from "../../interfaces/Step";
-import { Mugshot } from "../../styles";
-import { Grid } from "./styles";
+import { AlfredBaird, AmyJames, BenjiFin, CrownPub, EllaSwan, Grid, MuirLibrary, PheonixNotes, TomTorpy } from "./styles";
 
 interface AnswersProps {
   step: Step;
@@ -29,9 +28,14 @@ export const Answers = (props: AnswersProps) => {
 
   return (
     <Grid>
-      {[...new Array(10)].map((_, i) => {
-        return <Mugshot key={i} onClick={goToNextStep} />;
-      })}
+      <AlfredBaird />
+      <AmyJames />
+      <BenjiFin />
+      <CrownPub />
+      <EllaSwan />
+      <MuirLibrary />
+      <PheonixNotes />
+      <TomTorpy />
     </Grid>
   );
 };
