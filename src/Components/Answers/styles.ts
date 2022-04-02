@@ -27,9 +27,24 @@ export const BenjiFin = styled(Illustration).attrs({
   alt: "benji_fin",
 })``;
 
+export const BlueFlowerWood = styled(Illustration).attrs({
+  src: "/images/illustrations/blue_flower_wood.png",
+  alt: "blue_flower_wood",
+})``;
+
+export const CoatesBridge = styled(Illustration).attrs({
+  src: "/images/illustrations/coates_bridge.png",
+  alt: "coates_bridge",
+})``;
+
 export const CrownPub = styled(Illustration).attrs({
   src: "/images/illustrations/crown_pub.png",
   alt: "crown_pub",
+})``;
+
+export const ElizabethSmith = styled(Illustration).attrs({
+  src: "/images/illustrations/elizabeth_smith.png",
+  alt: "elizabeth_smith",
 })``;
 
 export const EllaSwan = styled(Illustration).attrs({
@@ -37,9 +52,34 @@ export const EllaSwan = styled(Illustration).attrs({
   alt: "ella_swan",
 })``;
 
+export const ElvanbankSchool = styled(Illustration).attrs({
+  src: "/images/illustrations/elvanbank_school.png",
+  alt: "elvanbank_school",
+})``;
+
+export const GreenParrotCafe = styled(Illustration).attrs({
+  src: "/images/illustrations/green_parrot_cafe.png",
+  alt: "green_parrot_cafe",
+})``;
+
+export const Lion = styled(Illustration).attrs({
+  src: "/images/illustrations/lion.png",
+  alt: "lion",
+})``;
+
+export const LogicMobileShop = styled(Illustration).attrs({
+  src: "/images/illustrations/logic_mobile_shop.png",
+  alt: "logic_mobile_shop",
+})``;
+
 export const MuirLibrary = styled(Illustration).attrs({
   src: "/images/illustrations/muir_library.png",
   alt: "muir_library",
+})``;
+
+export const Museum = styled(Illustration).attrs({
+  src: "/images/illustrations/museum.png",
+  alt: "museum",
 })``;
 
 export const PheonixNotes = styled(Illustration).attrs({
