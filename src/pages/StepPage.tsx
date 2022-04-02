@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Answers } from "../Components/Answers/Answers";
 import { MapboxMap } from "../Components/MapboxMap";
 import { SlideOver } from "../Components/SlideOver/SliderOver";
 import { steps } from "../constants/steps";
+import { GameContext } from "../game/GameContext";
 import { Step } from "../interfaces/Step";
 import { Button, Heading } from "../styles";
 import {
@@ -22,6 +24,15 @@ export function StepPage({ step, mapboxMap }: StepProps) {
   const { clues, directions } = step;
 
   const [showAnswers, setShowAnswers] = useState(false);
+  const gameContext = useContext(GameContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!gameContext.game.started) {
+      navigate("/");
+    }
+  }, []);
+
   // const stepIndex = steps.findIndex((_) => _.id === step.id);
   // const progress = (stepIndex + 1) / steps.length;
   return (

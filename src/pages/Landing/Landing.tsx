@@ -5,12 +5,38 @@ import {
   MagnifyingGlass,
   MainContainer,
   PostageStamp,
-  StyledLink,
+  SecondaryButton,
+  Button,
 } from "../../styles";
 import { steps } from "../../constants/steps";
 import { NotesText } from "./styles";
+import { checkExistingGame } from "../../game/helpers";
+import { useContext } from "react";
+import { GameContext } from "../../game/GameContext";
+import { useNavigate } from "react-router-dom";
 
 export function Landing() {
+  const gameContext = useContext(GameContext);
+  const navigate = useNavigate();
+
+  function startGame() {
+    gameContext.startGame();
+    navigate(`/${steps[0].id}`);
+  }
+
+  function continueExistingGame() {
+    const game = gameContext.loadGame();
+    if (game) {
+      const nextIndex = game.completedSteps.length;
+      const nextStep = steps[nextIndex];
+      if (nextStep) {
+        navigate(`/${nextStep.id}`);
+      } else {
+        navigate(`/finish`);
+      }
+    }
+  }
+
   return (
     <MainContainer>
       <Container>
@@ -33,8 +59,15 @@ export function Landing() {
           Your job will be to eliminate suspects and locations until you are
           left with the thief and the crime scene.
         </Paragraph>
-        {/* <Map /> */}
-        <StyledLink to={steps[0].id}>Get started</StyledLink>
+        <Button onClick={startGame}>Start</Button>
+        {checkExistingGame() && (
+          <>
+            <span style={{ marginTop: "10px" }}>or</span>
+            <SecondaryButton onClick={continueExistingGame}>
+              Continue existing game
+            </SecondaryButton>
+          </>
+        )}
         <NotesText>
           <em>
             * This website may ask for permission for your location to plot your

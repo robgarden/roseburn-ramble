@@ -45,6 +45,14 @@ export const StyledLink = styled(Link)`
   z-index: 2;
 `
 
+export const SecondaryButton = styled.button`
+  appearance: none;
+  border: none;
+  background: none;
+  margin-top: 10px;
+  color: ${(props => props.theme.darkBlue)};
+`
+
 export const Button = styled.button`
   appearance: none;
   border: none;
@@ -70,6 +78,7 @@ export const Paragraph = styled.p`
 
 export const Heading = styled.h1`
   font-size: 24px;
+  margin-top: 40px;
 `
 
 export const MagnifyingGlass = styled.img.attrs({

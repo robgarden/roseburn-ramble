@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { SHUFFLED_STEPS, steps } from "../../constants/steps";
+import { GameContext } from "../../game/GameContext";
 import { Step } from "../../interfaces/Step";
+import { shuffle } from "../../utils";
 import { Answer } from "../Answer/Answer";
 import {
   AlfredBaird,
@@ -15,6 +18,7 @@ import {
   ElvanbankSchool,
   GreenParrotCafe,
   Grid,
+  Illustration,
   Lion,
   LogicMobileShop,
   MuirLibrary,
@@ -24,13 +28,21 @@ import {
 } from "./styles";
 
 interface AnswersProps {
+  // the current step we are on
   step: Step;
   onAnswer: () => void;
 }
 
+const SHUFFLED: (Step | string)[] = shuffle([
+  ...steps,
+  "coates_bridge",
+  "amy_james",
+]);
+
 export const Answers = (props: AnswersProps) => {
   const { step, onAnswer } = props;
 
+  const gameContext = useContext(GameContext);
   const navigate = useNavigate();
 
   const nextStepIndex = steps.findIndex((_) => _.id === step.id) + 1;
@@ -45,16 +57,36 @@ export const Answers = (props: AnswersProps) => {
     }
   }
 
+  function checkAnswerAndContinue(shortAnswer: string) {
+    console.log(shortAnswer);
+  }
+
+  function onCorrect() {
+    gameContext.addToCompletedSteps(step);
+    goToNextStep();
+  }
+
   return (
     <Grid>
-      {SHUFFLED_STEPS.map((s) => {
+      {SHUFFLED.map((s) => {
         const index = steps.findIndex((_) => _ === s);
+
+        if (typeof s === "string") {
+          return (
+            <Illustration
+              key={s}
+              src={`/images/illustrations/${s}.png`}
+              alt={s}
+            />
+          );
+        }
         return (
           <Answer
             key={s.shortAnswer}
             name={s.shortAnswer}
             complete={index < steps.findIndex((_) => _ === step)}
-            onClick={goToNextStep}
+            onCorrect={onCorrect}
+            step={step}
           />
         );
       })}

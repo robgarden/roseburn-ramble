@@ -1,15 +1,22 @@
 import styled from "styled-components";
 
-export const Container = styled.div<{ complete: boolean }>`
+export const Container = styled.div<{ correct: boolean; incorrect: boolean }>`
   position: relative;
 
   svg {
     position: absolute;
-    color: #2e2;
     z-index: 2;
   }
 
-  img {
-    opacity: ${props => props.complete ? 0.15 : 1.0};
+  svg.correct {
+    color: #2e2;
   }
-`
+
+  svg.incorrect {
+    color: #e22;
+  }
+
+  img {
+    opacity: ${(props) => (props.correct || props.incorrect ? 0.15 : 1.0)};
+  }
+`;
