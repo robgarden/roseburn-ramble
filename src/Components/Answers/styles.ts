@@ -6,9 +6,7 @@ export const Grid = styled.div`
   grid-gap: 0.25rem;
 `;
 
-export const Illustration = styled.img.attrs({
-  alt: "illustation",
-})`
+export const Illustration = styled.img`
   width: 100%;
 `;
 

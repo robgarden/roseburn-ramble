@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 
-import { steps } from "../../constants/steps";
+import { SHUFFLED_STEPS, steps } from "../../constants/steps";
 import { Step } from "../../interfaces/Step";
+import { Answer } from "../Answer/Answer";
 import {
   AlfredBaird,
   AmyJames,
@@ -46,22 +47,17 @@ export const Answers = (props: AnswersProps) => {
 
   return (
     <Grid>
-      <AlfredBaird />
-      <AmyJames />
-      <BenjiFin />
-      <BlueFlowerWood />
-      <CoatesBridge />
-      <CrownPub />
-      <ElizabethSmith />
-      <EllaSwan />
-      <ElvanbankSchool />
-      <GreenParrotCafe />
-      <Lion />
-      <LogicMobileShop />
-      <MuirLibrary />
-      <Museum />
-      <PheonixNotes />
-      <TomTorpy />
+      {SHUFFLED_STEPS.map((s) => {
+        const index = steps.findIndex((_) => _ === s);
+        return (
+          <Answer
+            key={s.shortAnswer}
+            name={s.shortAnswer}
+            complete={index < steps.findIndex((_) => _ === step)}
+            onClick={goToNextStep}
+          />
+        );
+      })}
     </Grid>
   );
 };
