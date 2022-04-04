@@ -44,7 +44,8 @@ export function FinishPage() {
     <MainContainer>
       <Container>
         <Heading>Well done!</Heading>
-        <Paragraph>You're an expert detective.</Paragraph>
+        <Paragraph>You're a TOP QUALITY detective.</Paragraph>
+        <Paragraph>You've solved the case of the missing jewels.</Paragraph>
         <Paragraph>The crime scene and suspect are:</Paragraph>
         <div style={{ display: "flex", width: "100%" }}>
           <Illustration

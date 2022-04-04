@@ -13,12 +13,12 @@ export function DonationPage() {
     <MainContainer>
       <Container>
         <Heading>One more thing</Heading>
-        <Paragraph>As you can see, there's no playground in sight</Paragraph>
-        <Paragraph>An extra donation would help with our plight!</Paragraph>
+        <Paragraph>Our playground now is a rather sad sight</Paragraph>
+        <Paragraph>Can you give a bit extra to help make things right?</Paragraph>
         <img
           src="/images/playground.jpeg"
           alt="playground"
-          style={{ width: "100%", borderRadius: "2px", marginTop: "30px" }}
+          style={{ width: "100%", borderRadius: "2px", marginTop: "10px" }}
         />
         <StyledLink as={"a"} href={DONATION_LINK} target="_blank" style={{ marginTop: "50px"}}>
           Donate
