@@ -5,7 +5,7 @@ import { MapboxMap } from "../Components/MapboxMap";
 import { SlideOver } from "../Components/SlideOver/SliderOver";
 import { steps } from "../constants/steps";
 import { GameContext } from "../game/GameContext";
-import { Step } from "../interfaces/Step";
+import { Step, StepType } from "../interfaces/Step";
 import { Button, Heading } from "../styles";
 import {
   Container,
@@ -49,7 +49,11 @@ export function StepPage({ step, mapboxMap }: StepProps) {
         {clues.map((clue, i) => (
           <Paragraph key={`${step.id}-clue-${i}`}>{clue}</Paragraph>
         ))}
-        <Button onClick={() => setShowAnswers(true)}>Answer Clue</Button>
+        <Button onClick={() => setShowAnswers(true)}>
+          {step.type === StepType.Suspect
+            ? "Pick a suspect"
+            : "Pick a crime scene"}
+        </Button>
         <div style={{ marginTop: "50px", width: "100%" }}>
           <MapboxMap step={step} />
         </div>

@@ -1,5 +1,5 @@
 import { LngLat } from "mapbox-gl";
-import { Step } from "../interfaces/Step";
+import { Step, StepType } from "../interfaces/Step";
 import { shuffle } from "../utils";
 
 export const steps: Step[] = [
@@ -13,6 +13,7 @@ export const steps: Step[] = [
     ],
     answer: "Answer: Elizabeth (a suspect Elizabeth Smith – a doctor)",
     shortAnswer: "elizabeth_smith",
+    type: StepType.Suspect,
     coords: new LngLat(-3.2368, 55.9434),
   },
   {
@@ -24,6 +25,7 @@ export const steps: Step[] = [
     ],
     answer: "Answer: FIN (a suspect Benjy Fin - a fisherman)",
     shortAnswer: "benji_fin",
+    type: StepType.Suspect,
   },
   {
     id: "9e8a0176-ea2b-4a0b-bdac-f7e76ac1c1aa",
@@ -35,6 +37,7 @@ export const steps: Step[] = [
     ],
     answer: "Answer: Blue (a place Blue Flower Wood)",
     shortAnswer: "blue_flower_wood",
+    type: StepType.Location,
   },
   {
     id: "91273b1c-3fbe-42bd-9f0c-fbe73818edde",
@@ -46,6 +49,7 @@ export const steps: Step[] = [
     ],
     answer: "Answer: Elvanbank (a place Elvanbank School)",
     shortAnswer: "elvanbank_school",
+    type: StepType.Location,
   },
   {
     id: "ebe3a699-b404-42f3-b02f-6e869b0b9253",
@@ -57,6 +61,7 @@ export const steps: Step[] = [
     ],
     answer: "Answer: Phoenix (a suspect Phoenix Notes – a musician)",
     shortAnswer: "pheonix_notes",
+    type: StepType.Suspect,
   },
   {
     id: "8dfec32d-c4da-4d04-96ff-8605f4a28de3",
@@ -68,6 +73,7 @@ export const steps: Step[] = [
     ],
     answer: "Answer: Logic (a place Logic Mobile Phone Shop)",
     shortAnswer: "logic_mobile_shop",
+    type: StepType.Location,
   },
   {
     id: "238885e8-4898-4aea-b91c-73f595ea23d5",
@@ -79,6 +85,7 @@ export const steps: Step[] = [
     ],
     answer: "Answer: Green Parrot (a place Green Parrot Café)",
     shortAnswer: "green_parrot_cafe",
+    type: StepType.Location,
   },
   {
     id: "ca005314-2a6c-4b6a-ace4-fedac983634f",
@@ -90,6 +97,7 @@ export const steps: Step[] = [
     ],
     answer: "Answer: Museum (a place Museum)",
     shortAnswer: "museum",
+    type: StepType.Location,
   },
   {
     id: "25638924-b864-4b12-9946-d1ca5073abac",
@@ -101,6 +109,7 @@ export const steps: Step[] = [
     ],
     answer: "Answer: Lion (a place Lion statue)",
     shortAnswer: "lion",
+    type: StepType.Location,
   },
   {
     id: "3ec3b790-fe27-4489-b1d9-327a69d71f86",
@@ -112,6 +121,7 @@ export const steps: Step[] = [
     ],
     answer: "Answer: Torpy (a suspect Tom Torpy - a newspaper delivery boy)",
     shortAnswer: "tom_torpy",
+    type: StepType.Suspect,
   },
   {
     id: "594e425a-df8c-4128-824b-ed351412af00",
@@ -123,6 +133,7 @@ export const steps: Step[] = [
     ],
     answer: "Answer: Muir (a place Muir Library)",
     shortAnswer: "muir_library",
+    type: StepType.Location,
   },
   {
     id: "d3204100-ab02-4359-9bca-ad6c162beb3d",
@@ -134,6 +145,7 @@ export const steps: Step[] = [
     ],
     answer: "Answer: Baird (a suspect Alfred Baird - a florist)",
     shortAnswer: "alfred_baird",
+    type: StepType.Suspect,
   },
   {
     id: "b78d1941-da81-4fb3-9c46-f2b92c392718",
@@ -144,6 +156,7 @@ export const steps: Step[] = [
     ],
     answer: "Answer: Crown (a place The Crown pub)",
     shortAnswer: "crown_pub",
+    type: StepType.Location,
   },
   {
     id: "dd61371d-a352-40b6-8cee-e90767cd52a4",
@@ -155,8 +168,8 @@ export const steps: Step[] = [
     ],
     answer: "Answer: Swan (a person Ella Swan - a ballet teacher)",
     shortAnswer: "ella_swan",
+    type: StepType.Suspect,
   },
 ];
 
-
-export const SHUFFLED_STEPS = shuffle(steps)
+export const SHUFFLED_STEPS = shuffle(steps);
