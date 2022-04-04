@@ -14,7 +14,6 @@ export const steps: Step[] = [
     answer: "Answer: Elizabeth (a suspect Elizabeth Smith – a doctor)",
     shortAnswer: "elizabeth_smith",
     type: StepType.Suspect,
-    coords: new LngLat(-3.2368, 55.9434),
   },
   {
     id: "a2399132-dfd0-4394-98df-15369dba7e01",

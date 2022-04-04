@@ -76,7 +76,7 @@ export function MapboxMap({ step }: MapboxMapProps) {
 
   return (
     <div style={{ width: "100%" }}>
-      {typeof distanceFromClue !== "undefined" && (
+      {typeof distanceFromClue === "number" && (
         <Paragraph>
           Est. Distance from clue {distanceFromClue.toFixed(5)} miles
         </Paragraph>
