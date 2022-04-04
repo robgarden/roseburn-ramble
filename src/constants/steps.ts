@@ -42,7 +42,7 @@ export const steps: Step[] = [
   {
     id: "91273b1c-3fbe-42bd-9f0c-fbe73818edde",
     directions:
-      "Continue along the path, under the bridges and through the tunnel. Follow the path round looking out for a sign ‘WW 20’",
+      "Continue along the path, under the bridges and through the tunnel. Follow the path round looking to your right for a sign “20 WW",
     clues: [
       "Look on the map for 265 and a place",
       "No jewels here – not a trace!",
@@ -54,7 +54,7 @@ export const steps: Step[] = [
   {
     id: "ebe3a699-b404-42f3-b02f-6e869b0b9253",
     directions:
-      "Turn right into Westfield Avenue and follow the signs back to the Water of Leith (South). Cross the footbridge and take the path signposted Balgreen School. At the end of the path turn left onto Balgreen Road and pause facing the school.",
+      "Take the first road right into Westfield Avenue and follow the signs back to the Water of Leith (South). Cross the footbridge and take the path signposted Balgreen School.  At the end of the path turn left onto Balgreen Road and pause facing the school.",
     clues: [
       "Detectives keep going and never tire",
       "What is that bird coming out of the fire?",
@@ -101,8 +101,7 @@ export const steps: Step[] = [
   },
   {
     id: "25638924-b864-4b12-9946-d1ca5073abac",
-    directions:
-      "At the end of the path turn right and right again towards the bandstand.",
+    directions: "Up ahead, turn right and right again towards the bandstand.",
     clues: [
       "You’d have thought a bandstand was too big to mislay",
       "Read where it was made before going astray?",
@@ -126,7 +125,7 @@ export const steps: Step[] = [
   {
     id: "594e425a-df8c-4128-824b-ed351412af00",
     directions:
-      "Facing the statue, turn left and then next right to exit the walled garden. Follow the path to the left in the direction of Balgreen / Quiet Route. Go through the car park and cross Balgreen Road at the pedestrian crossing.",
+      "Facing the statue, turn left and then next right to exit the walled garden. Follow the path to the left in the direction of Balgreen / Quiet Route. Go through the car park and leave the park before crossing at the pedestrian crossing. Look carefully before entering the gravel path along the river.",
     clues: [
       "Look out for an arrow in purple and white",
       "Another place where no jewels are in sight.",
