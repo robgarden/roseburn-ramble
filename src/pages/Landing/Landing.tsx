@@ -59,14 +59,18 @@ export function Landing() {
           Your job will be to eliminate suspects and locations until you are
           left with the thief and the crime scene.
         </Paragraph>
-        <Button onClick={startGame}>Start</Button>
-        {checkExistingGame() && (
+        {checkExistingGame() ? (
           <>
+            <Button onClick={continueExistingGame}>
+              Continue game
+            </Button>
             <span style={{ marginTop: "10px" }}>or</span>
-            <SecondaryButton onClick={continueExistingGame}>
-              Continue existing game
+            <SecondaryButton onClick={startGame}>
+              Start a new game
             </SecondaryButton>
           </>
+        ) : (
+          <Button onClick={startGame}>Start</Button>
         )}
         <NotesText>
           <em>
