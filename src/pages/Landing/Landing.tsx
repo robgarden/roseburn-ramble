@@ -52,12 +52,12 @@ export function Landing() {
         <Paragraph>
           <strong>The Roseburn Detective Agency</strong> is looking for TOP
           QUALITY junior detectives to help solve the case of The Missing
-          Jewels.{" "}
+          Jewels.
         </Paragraph>
         <Paragraph>
           Here is a set of clues leading you on a ramble around our local area.
           Your job will be to eliminate suspects and locations until you are
-          left with the thief and the crime scene.
+          left with the thief and the hiding place.
         </Paragraph>
         {checkExistingGame() ? (
           <>

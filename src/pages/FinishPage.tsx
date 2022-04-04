@@ -46,7 +46,7 @@ export function FinishPage() {
         <Heading>Well done!</Heading>
         <Paragraph>You're a TOP QUALITY detective.</Paragraph>
         <Paragraph>You've solved the case of the missing jewels.</Paragraph>
-        <Paragraph>The crime scene and suspect are:</Paragraph>
+        <Paragraph>The hiding place and thief are:</Paragraph>
         <div style={{ display: "flex", width: "100%" }}>
           <Illustration
             src="/images/illustrations/coates_bridge.png"
