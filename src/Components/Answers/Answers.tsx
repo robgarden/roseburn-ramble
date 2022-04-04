@@ -73,10 +73,10 @@ export const Answers = (props: AnswersProps) => {
 
         if (typeof s === "string") {
           return (
-            <Illustration
+            <Answer
               key={s}
-              src={`/images/illustrations/${s}.png`}
-              alt={s}
+              name={s}
+              onCorrect={() => {}}
             />
           );
         }

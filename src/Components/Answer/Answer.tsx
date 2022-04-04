@@ -7,7 +7,7 @@ interface AnswerProps {
   name: string;
   onCorrect(name: string): void;
   complete?: boolean;
-  step: Step;
+  step?: Step;
 }
 
 export function Answer(props: AnswerProps) {
@@ -17,7 +17,7 @@ export function Answer(props: AnswerProps) {
   const [correct, setCorrect] = useState(complete)
 
   function checkAnswer() {
-    if (name === step.shortAnswer && !correct) {
+    if (name === step?.shortAnswer && !correct) {
       // user selected correct answer
       setCorrect(true);
       setTimeout(() => {
