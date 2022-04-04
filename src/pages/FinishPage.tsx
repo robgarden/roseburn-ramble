@@ -17,12 +17,13 @@ emailjs.init("JKJzP7ivBIWEMdcQk");
 const TO_EMAIL = "jackalberrystudio@gmail.com"
 
 export function FinishPage() {
+  const [submitting, setSubmitting] = useState(false)
   const [name, setName] = useState<string>();
   const gameContext = useContext(GameContext);
   const navigate = useNavigate();
 
   function sendMail() {
-    emailjs.send("service_htdm5c9", "template_at2wnus", {
+    return emailjs.send("service_htdm5c9", "template_at2wnus", {
       to_name: name,
       to_email: TO_EMAIL,
       reply_to: TO_EMAIL
@@ -35,8 +36,10 @@ export function FinishPage() {
     }
   }, []);
 
-  function submit() {
-    // sendMail()
+  async function submit() {
+    setSubmitting(true)
+    await sendMail()
+    setSubmitting(false)
     navigate('/donation')
   }
 
@@ -66,7 +69,7 @@ export function FinishPage() {
           onChange={(e) => setName(e.target.value)}
           style={{ padding: "20px" }}
         />
-        <Button onClick={submit}>Submit Answers</Button>
+        <Button onClick={submit} disabled={submitting}>Submit Answers</Button>
       </Container>
     </MainContainer>
   );

@@ -69,6 +69,7 @@ export const Button = styled.button`
   width: 100%;
   margin-top: 30px;
   z-index: 2;
+  opacity: ${(props) => props.disabled ? 0.5 : 1};
 `;
 
 export const Paragraph = styled.p`
