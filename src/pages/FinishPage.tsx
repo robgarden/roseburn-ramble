@@ -14,6 +14,8 @@ import {
 
 emailjs.init("JKJzP7ivBIWEMdcQk");
 
+const TO_EMAIL = "jackalberrystudio@gmail.com"
+
 export function FinishPage() {
   const [name, setName] = useState<string>();
   const gameContext = useContext(GameContext);
@@ -22,8 +24,8 @@ export function FinishPage() {
   function sendMail() {
     emailjs.send("service_htdm5c9", "template_at2wnus", {
       to_name: name,
-      to_email: "robgarden@gmail.com",
-      reply_to: "robgarden@gmail.com",
+      to_email: TO_EMAIL,
+      reply_to: TO_EMAIL
     });
   }
 
