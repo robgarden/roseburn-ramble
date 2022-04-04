@@ -55,15 +55,14 @@ export function Landing() {
           Jewels.
         </Paragraph>
         <Paragraph>
-          Here is a set of clues leading you on a ramble around our local area.
-          Your job will be to eliminate suspects and locations until you are
-          left with the thief and the hiding place.
+          Here is a set of clues for you to follow. Your mission is to use the
+          answers to the clues to eliminate innocent suspects and empty hiding
+          places. Solve all the clues and you will be left with the thief's
+          identity and where the jewels are hidden!
         </Paragraph>
         {checkExistingGame() ? (
           <>
-            <Button onClick={continueExistingGame}>
-              Continue game
-            </Button>
+            <Button onClick={continueExistingGame}>Continue game</Button>
             <span style={{ marginTop: "10px" }}>or</span>
             <SecondaryButton onClick={startGame}>
               Start a new game
