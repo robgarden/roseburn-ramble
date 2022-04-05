@@ -52,7 +52,7 @@ export function StepPage({ step, mapboxMap }: StepProps) {
         <Button onClick={() => setShowAnswers(true)}>
           {step.type === StepType.Suspect
             ? "Pick a suspect"
-            : "Pick a crime scene"}
+            : "Pick a hiding place"}
         </Button>
         <div style={{ marginTop: "50px", width: "100%" }}>
           <MapboxMap step={step} />
